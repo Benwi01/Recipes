@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  recipeservice:
+    image: recipeservice:latest
+    build:
+      context: ./RecipeService
+    ports:
+      - "5001:80"
+    networks:
+      - recipe-blog-network
+
+  userservice:
+    image: userservice:latest
+    build:
+      context: ./UserService
+    ports:
+      - "5002:80"
+    networks:
+      - recipe-blog-network
+
+  blogservice:
+    image: blogservice:latest
+    build:
+      context: ./BlogService
+    ports:
+      - "5003:80"
+    networks:
+      - recipe-blog-network
+
+networks:
+  recipe-blog-network:
+    driver: bridge
