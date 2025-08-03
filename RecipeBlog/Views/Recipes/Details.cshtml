@@ -1,0 +1,14 @@
+<h1>@model RecipeBlog.Models.Recipe</h1>
+
+<div>
+    <h2>@Model.Title</h2>
+    <p><strong>Ingredients:</strong></p>
+    <p>@Model.Ingredients</p>
+    
+    <p><strong>Instructions:</strong></p>
+    <p>@Model.Instructions</p>
+    
+    <p><strong>Created on:</strong> @Model.CreatedDate.ToString("MMMM dd, yyyy")</p>
+</div>
+
+<a href="@Url.Action("Index", "Recipes")">Back to Recipes</a>
